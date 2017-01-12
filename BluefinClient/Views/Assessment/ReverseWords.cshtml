@@ -1,0 +1,28 @@
+﻿<form novalidate id="reverseWordForm" name="reverseWordForm">
+    <h1>Reverse Words</h1>
+    <table>
+        <tr>
+            <td>
+                Input
+            </td>
+            <td>
+                <input type="text" id="inputString" name="inputString" ng-model="model.inputString" required />
+                <span class="has-error"
+                      ng-show="reverseWordForm.inputString.$invalid && reverseWordForm.inputString.$dirty">
+                    Input is required
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                 <h3>{{model.result}}</h3>
+            </td>
+        </tr>
+    </table>
+    <div>
+        <button type="button" ng-click="submit(reverseWordForm)" ng-disabled="model.isBusy">Submit</button>
+        <button type="button" ng-click="back()" ng-disabled="model.isBusy">Back</button>
+        {{model.message}}
+    </div>
+</form>
